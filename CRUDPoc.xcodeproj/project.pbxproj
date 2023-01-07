@@ -9,25 +9,29 @@
 /* Begin PBXBuildFile section */
 		B9E373DB2968B75C00651C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DA2968B75C00651C16 /* AppDelegate.swift */; };
 		B9E373DD2968B75C00651C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DC2968B75C00651C16 /* SceneDelegate.swift */; };
-		B9E373DF2968B75C00651C16 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DE2968B75C00651C16 /* ViewController.swift */; };
+		B9E373DF2968B75C00651C16 /* CrudController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DE2968B75C00651C16 /* CrudController.swift */; };
 		B9E373E42968B75D00651C16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9E373E32968B75D00651C16 /* Assets.xcassets */; };
 		B9E373E72968B75D00651C16 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B9E373E52968B75D00651C16 /* LaunchScreen.storyboard */; };
-		B9E373F42968B90100651C16 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F32968B90100651C16 /* HelloView.swift */; };
+		B9E373F42968B90100651C16 /* CrudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F32968B90100651C16 /* CrudView.swift */; };
 		B9E373F72968B92900651C16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F62968B92900651C16 /* Utils.swift */; };
 		B9E373FA2968B9B400651C16 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F92968B9B400651C16 /* ViewCoding.swift */; };
+		B9E373FC2968E73F00651C16 /* CrudViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373FB2968E73F00651C16 /* CrudViewmodel.swift */; };
+		B9E373FF2968E80900651C16 /* CRUD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B9E373D72968B75C00651C16 /* CRUDPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRUDPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E373DA2968B75C00651C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E373DC2968B75C00651C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B9E373DE2968B75C00651C16 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B9E373DE2968B75C00651C16 /* CrudController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudController.swift; sourceTree = "<group>"; };
 		B9E373E32968B75D00651C16 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B9E373E62968B75D00651C16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9E373E82968B75D00651C16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9E373F32968B90100651C16 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
+		B9E373F32968B90100651C16 /* CrudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudView.swift; sourceTree = "<group>"; };
 		B9E373F62968B92900651C16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B9E373F92968B9B400651C16 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
+		B9E373FB2968E73F00651C16 /* CrudViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudViewmodel.swift; sourceTree = "<group>"; };
+		B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRUD.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +74,7 @@
 				B9E373E32968B75D00651C16 /* Assets.xcassets */,
 				B9E373E52968B75D00651C16 /* LaunchScreen.storyboard */,
 				B9E373E82968B75D00651C16 /* Info.plist */,
+				B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */,
 			);
 			path = CRUDPoc;
 			sourceTree = "<group>";
@@ -77,7 +82,7 @@
 		B9E373EE2968B8B500651C16 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B9E373F32968B90100651C16 /* HelloView.swift */,
+				B9E373F32968B90100651C16 /* CrudView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -92,7 +97,7 @@
 		B9E373F02968B8C800651C16 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B9E373DE2968B75C00651C16 /* ViewController.swift */,
+				B9E373DE2968B75C00651C16 /* CrudController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 		B9E373F12968B8D000651C16 /* Viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				B9E373FB2968E73F00651C16 /* CrudViewmodel.swift */,
 			);
 			path = Viewmodel;
 			sourceTree = "<group>";
@@ -200,11 +206,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E373F72968B92900651C16 /* Utils.swift in Sources */,
-				B9E373DF2968B75C00651C16 /* ViewController.swift in Sources */,
-				B9E373F42968B90100651C16 /* HelloView.swift in Sources */,
+				B9E373DF2968B75C00651C16 /* CrudController.swift in Sources */,
+				B9E373F42968B90100651C16 /* CrudView.swift in Sources */,
+				B9E373FC2968E73F00651C16 /* CrudViewmodel.swift in Sources */,
 				B9E373DB2968B75C00651C16 /* AppDelegate.swift in Sources */,
 				B9E373FA2968B9B400651C16 /* ViewCoding.swift in Sources */,
 				B9E373DD2968B75C00651C16 /* SceneDelegate.swift in Sources */,
+				B9E373FF2968E80900651C16 /* CRUD.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +420,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */,
+			);
+			currentVersion = B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */;
+			path = CRUD.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B9E373CF2968B75C00651C16 /* Project object */;
 }
