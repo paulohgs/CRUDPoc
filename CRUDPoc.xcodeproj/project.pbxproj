@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B96208FE296C584400AB9E85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96208FD296C584400AB9E85 /* UserModel.swift */; };
+		B9620904296C634100AB9E85 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9620903296C634100AB9E85 /* Observable.swift */; };
 		B9E373DB2968B75C00651C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DA2968B75C00651C16 /* AppDelegate.swift */; };
 		B9E373DD2968B75C00651C16 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DC2968B75C00651C16 /* SceneDelegate.swift */; };
 		B9E373DF2968B75C00651C16 /* CrudController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DE2968B75C00651C16 /* CrudController.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		B96208FD296C584400AB9E85 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B9620903296C634100AB9E85 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B9E373D72968B75C00651C16 /* CRUDPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRUDPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E373DA2968B75C00651C16 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9E373DC2968B75C00651C16 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B9620902296C633800AB9E85 /* Observer */ = {
+			isa = PBXGroup;
+			children = (
+				B9620903296C634100AB9E85 /* Observable.swift */,
+			);
+			path = Observer;
+			sourceTree = "<group>";
+		};
 		B9E373CE2968B75C00651C16 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +76,7 @@
 		B9E373D92968B75C00651C16 /* CRUDPoc */ = {
 			isa = PBXGroup;
 			children = (
+				B9620902296C633800AB9E85 /* Observer */,
 				B9E373F82968B9A900651C16 /* Protocol */,
 				B9E373F52968B91C00651C16 /* Utils */,
 				B9E373F22968B8E800651C16 /* Delegate */,
@@ -209,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9E373F72968B92900651C16 /* Utils.swift in Sources */,
+				B9620904296C634100AB9E85 /* Observable.swift in Sources */,
 				B9E373DF2968B75C00651C16 /* CrudController.swift in Sources */,
 				B9E373F42968B90100651C16 /* CrudView.swift in Sources */,
 				B9E373FC2968E73F00651C16 /* CrudViewmodel.swift in Sources */,

@@ -9,23 +9,19 @@ import Foundation
 
 class CrudViewmodel {
 
-    var users: [User] = []
+    var users: Observable<[User]> = Observable([])
 
     func createUser(userData: [String?]) -> User {
         guard let username = userData[1], let email = userData[0], let password = userData[2] else {
             return User(username: "", email: "", password: "")
         }
         let user = User(username: username, email: email, password: password)
-        users.append(user)
+        users.value?.append(user)
         return user
     }
 
-    func listAllUsers() {
-        print(users)
-        for user in users {
-            print(user.username)
-            print(user.email)
-            print(user.id)
-        }
+    func listAllUsers() -> [User] {
+        guard let values = users.value else { return [] }
+        return values
     }
 }

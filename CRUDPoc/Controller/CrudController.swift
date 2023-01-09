@@ -19,9 +19,16 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         crudView.sendData = { [weak self] userData in
-            let newUser = self?.crudViewmodel.createUser(userData: userData)
-            if newUser != nil {
-                print("Operacao sucedida.")
+            let _ = self?.crudViewmodel.createUser(userData: userData)
+        }
+        crudViewmodel.users.bind { [weak self] _ in
+            DispatchQueue.main.async {
+                print("usuário criado com sucesso.")
+                guard let users = self?.crudViewmodel.listAllUsers() else { return }
+                for user in users {
+                    print(user.username)
+                    print(user.id)
+                }
             }
         }
     }
