@@ -9,47 +9,11 @@ import UIKit
 
 class CrudView: UIView {
 
+    lazy var stackView = make(CrudStackView()) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+
     var sendData: ((_ userData: [String?] ) -> Void)?
-
-    lazy var usernameField = make(UITextField()) {
-        $0.textColor = .white
-        $0.layer.cornerRadius = 10
-        $0.keyboardType = .emailAddress
-        $0.borderStyle = .roundedRect
-        $0.autocorrectionType = .no
-        $0.clipsToBounds = true
-        $0.layer.masksToBounds = true
-        $0.placeholder = "Digite seu usuário:"
-        $0.backgroundColor = .systemGray2
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    lazy var emailField = make(UITextField()) {
-        $0.textColor = .white
-        $0.layer.cornerRadius = 10
-        $0.keyboardType = .emailAddress
-        $0.borderStyle = .roundedRect
-        $0.autocorrectionType = .no
-        $0.clipsToBounds = true
-        $0.layer.masksToBounds = true
-        $0.placeholder = "Digite seu email:"
-        $0.backgroundColor = .systemGray2
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
-
-    lazy var passwordField = make(UITextField()) {
-        $0.isSecureTextEntry = true
-        $0.textColor = .white
-        $0.layer.cornerRadius = 10
-        $0.keyboardType = .default
-        $0.borderStyle = .roundedRect
-        $0.autocorrectionType = .no
-        $0.clipsToBounds = true
-        $0.layer.masksToBounds = true
-        $0.placeholder = "Digite sua senha:"
-        $0.backgroundColor = .systemGray2
-        $0.translatesAutoresizingMaskIntoConstraints = false
-    }
 
     lazy var sendButton = make(UIButton()) {
         $0.addTarget(self, action: #selector(sendDataToController), for: .touchUpInside)
@@ -70,10 +34,13 @@ class CrudView: UIView {
     }
 
     @objc func sendDataToController() {
-        let userData: [String?] = [emailField.text, usernameField.text, passwordField.text]
+        let userData: [String?] = [
+            stackView.emailField.text,
+            stackView.usernameField.text,
+            stackView.passwordField.text
+        ]
         sendData?(userData)
     }
-
 }
 
 extension CrudView: ViewCoding {
@@ -82,32 +49,21 @@ extension CrudView: ViewCoding {
     }
 
     func setupHierarchy() {
-        addSubview(usernameField)
-        addSubview(emailField)
-        addSubview(passwordField)
+        addSubview(stackView)
         addSubview(sendButton)
     }
 
     func setupConstraints() {
         NSLayoutConstraint.activate([
-            // username constraints
-            usernameField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            usernameField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            usernameField.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: -20),
-            // email constraints
-            emailField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            emailField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            emailField.heightAnchor.constraint(equalToConstant: 35),
-            emailField.topAnchor.constraint(equalTo: usernameField.bottomAnchor, constant: 15),
-            // password constraints
-            passwordField.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),
-            passwordField.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -10),
-            passwordField.heightAnchor.constraint(equalTo: emailField.heightAnchor),
-            passwordField.topAnchor.constraint(equalTo: emailField.bottomAnchor, constant: 15),
-            // button constraints
-            sendButton.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            sendButton.topAnchor.constraint(equalTo: passwordField.bottomAnchor, constant: 20),
-            sendButton.widthAnchor.constraint(equalToConstant: 150),
+            // stack constraints
+            stackView.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            stackView.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            stackView.bottomAnchor.constraint(equalTo: self.centerYAnchor, constant: 10),
+             // button constraints
+            sendButton.topAnchor.constraint(equalTo: stackView.bottomAnchor, constant: 10),
+            sendButton.widthAnchor.constraint(equalToConstant: 135),
+            sendButton.heightAnchor.constraint(equalToConstant: 35),
+            sendButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
         ])
     }
 }
