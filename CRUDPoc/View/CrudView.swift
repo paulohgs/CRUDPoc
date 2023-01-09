@@ -7,7 +7,9 @@
 
 import UIKit
 
-class HelloView: UIView {
+class CrudView: UIView {
+
+    var sendData: ((_ userData: [String?] ) -> Void)?
 
     lazy var usernameField = make(UITextField()) {
         $0.textColor = .white
@@ -50,6 +52,7 @@ class HelloView: UIView {
     }
 
     lazy var sendButton = make(UIButton()) {
+        $0.addTarget(self, action: #selector(sendDataToController), for: .touchUpInside)
         $0.configuration = .borderedProminent()
         $0.layer.cornerRadius  = 10
         $0.layer.masksToBounds = true
@@ -66,9 +69,14 @@ class HelloView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
+    @objc func sendDataToController() {
+        let userData: [String?] = [emailField.text, usernameField.text, passwordField.text]
+        sendData?(userData)
+    }
+
 }
 
-extension HelloView: ViewCoding {
+extension CrudView: ViewCoding {
     func setupView() {
         backgroundColor = .systemBackground
     }

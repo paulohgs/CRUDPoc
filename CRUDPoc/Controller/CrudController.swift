@@ -9,15 +9,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    let helloView = HelloView()
+    let crudView = CrudView()
+    let crudViewmodel = CrudViewmodel()
 
     override func loadView() {
-        view = helloView
+        view = crudView
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        crudView.sendData = { [weak self] userData in
+            let newUser = self?.crudViewmodel.createUser(userData: userData)
+            if newUser != nil {
+                print("Operacao sucedida.")
+            }
+        }
     }
 }
 
