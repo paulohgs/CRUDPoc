@@ -22,14 +22,10 @@ class ViewController: UIViewController {
             let _ = self?.crudViewmodel.createUser(userData: userData)
         }
         crudViewmodel.users.bind { [weak self] _ in
-            DispatchQueue.main.async {
-                print("usuário criado com sucesso.")
-                guard let users = self?.crudViewmodel.listAllUsers() else { return }
-                for user in users {
-                    print(user.username)
-                    print(user.id)
-                }
+            guard let users = self?.crudViewmodel.users.value else {
+                return
             }
+            print(users)
         }
     }
 }

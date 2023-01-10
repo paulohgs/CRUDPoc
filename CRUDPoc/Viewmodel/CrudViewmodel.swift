@@ -6,22 +6,38 @@
 //
 
 import Foundation
+import UIKit
 
 class CrudViewmodel {
 
-    var users: Observable<[User]> = Observable([])
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
-    func createUser(userData: [String?]) -> User {
+    var users: Observable<[UserModel]> = Observable([])
+
+    func createUser(userData: [String?]) {
         guard let username = userData[1], let email = userData[0], let password = userData[2] else {
-            return User(username: "", email: "", password: "")
+            return
         }
-        let user = User(username: username, email: email, password: password)
-        users.value?.append(user)
-        return user
+        let newUser = UserModel(context: context)
+        newUser.id = UUID()
+        newUser.createdAt = Date()
+        newUser.email = email
+        newUser.username = username
+        newUser.password = password
+
+        do {
+            try context.save()
+            listAllUsers()
+        } catch {
+            print(error)
+        }
     }
 
-    func listAllUsers() -> [User] {
-        guard let values = users.value else { return [] }
-        return values
+    func listAllUsers() {
+        do {
+            users.value = try context.fetch(UserModel.fetchRequest())
+        } catch {
+            print(error)
+        }
     }
 }

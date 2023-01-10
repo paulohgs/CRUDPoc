@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B96208FE296C584400AB9E85 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96208FD296C584400AB9E85 /* UserModel.swift */; };
+		B944C1DF296DDFD200F85C06 /* CRUD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B944C1DD296DDFD200F85C06 /* CRUD.xcdatamodeld */; };
+		B944C1E2296DE06000F85C06 /* UserModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944C1E0296DE06000F85C06 /* UserModel+CoreDataClass.swift */; };
+		B944C1E3296DE06000F85C06 /* UserModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B944C1E1296DE06000F85C06 /* UserModel+CoreDataProperties.swift */; };
 		B9620904296C634100AB9E85 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9620903296C634100AB9E85 /* Observable.swift */; };
 		B9620906296C7C8C00AB9E85 /* CrudStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9620905296C7C8C00AB9E85 /* CrudStackView.swift */; };
 		B9E373DB2968B75C00651C16 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373DA2968B75C00651C16 /* AppDelegate.swift */; };
@@ -19,11 +21,12 @@
 		B9E373F72968B92900651C16 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F62968B92900651C16 /* Utils.swift */; };
 		B9E373FA2968B9B400651C16 /* ViewCoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373F92968B9B400651C16 /* ViewCoding.swift */; };
 		B9E373FC2968E73F00651C16 /* CrudViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E373FB2968E73F00651C16 /* CrudViewmodel.swift */; };
-		B9E373FF2968E80900651C16 /* CRUD.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B96208FD296C584400AB9E85 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		B944C1DE296DDFD200F85C06 /* CRUD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRUD.xcdatamodel; sourceTree = "<group>"; };
+		B944C1E0296DE06000F85C06 /* UserModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B944C1E1296DE06000F85C06 /* UserModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		B9620903296C634100AB9E85 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		B9620905296C7C8C00AB9E85 /* CrudStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudStackView.swift; sourceTree = "<group>"; };
 		B9E373D72968B75C00651C16 /* CRUDPoc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CRUDPoc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -37,7 +40,6 @@
 		B9E373F62968B92900651C16 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B9E373F92968B9B400651C16 /* ViewCoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCoding.swift; sourceTree = "<group>"; };
 		B9E373FB2968E73F00651C16 /* CrudViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudViewmodel.swift; sourceTree = "<group>"; };
-		B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CRUD.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B944C1D4296DDEED00F85C06 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				B944C1E0296DE06000F85C06 /* UserModel+CoreDataClass.swift */,
+				B944C1E1296DE06000F85C06 /* UserModel+CoreDataProperties.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		B9620902296C633800AB9E85 /* Observer */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,18 +89,18 @@
 		B9E373D92968B75C00651C16 /* CRUDPoc */ = {
 			isa = PBXGroup;
 			children = (
+				B944C1D4296DDEED00F85C06 /* CoreData */,
 				B9620902296C633800AB9E85 /* Observer */,
 				B9E373F82968B9A900651C16 /* Protocol */,
 				B9E373F52968B91C00651C16 /* Utils */,
 				B9E373F22968B8E800651C16 /* Delegate */,
-				B9E373EF2968B8C200651C16 /* Model */,
 				B9E373F12968B8D000651C16 /* Viewmodel */,
 				B9E373EE2968B8B500651C16 /* View */,
 				B9E373F02968B8C800651C16 /* Controller */,
 				B9E373E32968B75D00651C16 /* Assets.xcassets */,
 				B9E373E52968B75D00651C16 /* LaunchScreen.storyboard */,
 				B9E373E82968B75D00651C16 /* Info.plist */,
-				B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */,
+				B944C1DD296DDFD200F85C06 /* CRUD.xcdatamodeld */,
 			);
 			path = CRUDPoc;
 			sourceTree = "<group>";
@@ -101,14 +112,6 @@
 				B9620905296C7C8C00AB9E85 /* CrudStackView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		B9E373EF2968B8C200651C16 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				B96208FD296C584400AB9E85 /* UserModel.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		B9E373F02968B8C800651C16 /* Controller */ = {
@@ -224,15 +227,16 @@
 			files = (
 				B9620906296C7C8C00AB9E85 /* CrudStackView.swift in Sources */,
 				B9E373F72968B92900651C16 /* Utils.swift in Sources */,
+				B944C1E2296DE06000F85C06 /* UserModel+CoreDataClass.swift in Sources */,
 				B9620904296C634100AB9E85 /* Observable.swift in Sources */,
+				B944C1E3296DE06000F85C06 /* UserModel+CoreDataProperties.swift in Sources */,
 				B9E373DF2968B75C00651C16 /* CrudController.swift in Sources */,
 				B9E373F42968B90100651C16 /* CrudView.swift in Sources */,
 				B9E373FC2968E73F00651C16 /* CrudViewmodel.swift in Sources */,
 				B9E373DB2968B75C00651C16 /* AppDelegate.swift in Sources */,
 				B9E373FA2968B9B400651C16 /* ViewCoding.swift in Sources */,
 				B9E373DD2968B75C00651C16 /* SceneDelegate.swift in Sources */,
-				B96208FE296C584400AB9E85 /* UserModel.swift in Sources */,
-				B9E373FF2968E80900651C16 /* CRUD.xcdatamodeld in Sources */,
+				B944C1DF296DDFD200F85C06 /* CRUD.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,13 +446,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		B9E373FD2968E80900651C16 /* CRUD.xcdatamodeld */ = {
+		B944C1DD296DDFD200F85C06 /* CRUD.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */,
+				B944C1DE296DDFD200F85C06 /* CRUD.xcdatamodel */,
 			);
-			currentVersion = B9E373FE2968E80900651C16 /* CRUD.xcdatamodel */;
-			path = CRUD.xcdatamodeld;
+			currentVersion = B944C1DE296DDFD200F85C06 /* CRUD.xcdatamodel */;
+			name = CRUD.xcdatamodeld;
+			path = ../CRUD.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
